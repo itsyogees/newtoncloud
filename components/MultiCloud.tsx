@@ -57,15 +57,18 @@ const MultiCloud = () => {
             transition={{ duration: 0.6 }}
             className="relative group"
           >
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder, user can replace
-                title="CloudMinister Multi-Cloud Hosting"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              {/* Custom Play Overlay if needed - but iframe covers it */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-gray-100">
+              <Image
+                src="/assets/vps_hosting_offer.avif"
+                alt="Multi-Cloud Hosting Services"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <Play className="w-8 h-8 text-[#07a447] fill-[#07a447]" />
+                </div>
+              </div>
             </div>
             {/* Decorative elements behind video */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-green-50 rounded-full -z-10"></div>
