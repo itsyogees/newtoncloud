@@ -111,110 +111,121 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed w-full z-50 transition-all duration-300 font-sans">
-      {/* Top Bar */}
-      <div className="bg-[#07a447] text-white py-2 text-[10px] sm:text-sm">
+    <header className="fixed w-full z-50 transition-all duration-300">
+      {/* Top Bar - More subtle and integrated */}
+      <div className={`transition-all duration-300 ${scrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-auto py-2 bg-gray-900 text-white/90'}`}>
         <div className="w-[90%] mx-auto flex justify-between items-center px-4">
-          <div className="flex items-center space-x-3 sm:space-x-6">
-            <div className="hidden sm:flex items-center space-x-2">
-              <Phone className="w-3 h-3 sm:w-4 h-4 text-white/80" />
-              <span className="font-semibold">+91 98406 04073</span>
+          <div className="flex items-center space-x-6 text-[13px]">
+            <div className="hidden sm:flex items-center space-x-2.5">
+              <Phone className="w-3.5 h-3.5 text-[#07a447]" />
+              <span className="font-medium">+91 98406 04073</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-3 h-3 sm:w-4 h-4 text-white/80" />
-              <span className="font-semibold truncate max-w-[150px] sm:max-w-none">support@newtoncloudserve.com</span>
+            <div className="flex items-center space-x-2.5">
+              <Mail className="w-3.5 h-3.5 text-[#07a447]" />
+              <span className="font-medium truncate max-w-[200px] sm:max-w-none">support@newtoncloudserve.com</span>
             </div>
           </div>
-          <div className="flex items-center space-x-3 sm:space-x-4">
-            <Link href="#" className="hover:scale-110 transition-transform"><Facebook className="w-3 h-3 sm:w-4 h-4" /></Link>
-            <Link href="#" className="hover:scale-110 transition-transform"><Twitter className="w-3 h-3 sm:w-4 h-4" /></Link>
-            <Link href="#" className="hover:scale-110 transition-transform"><Instagram className="w-3 h-3 sm:w-4 h-4" /></Link>
-            <Link href="#" className="hover:scale-110 transition-transform"><Linkedin className="w-3 h-3 sm:w-4 h-4" /></Link>
+          <div className="flex items-center space-x-5">
+            <Link href="#" className="hover:text-[#07a447] transition-colors"><Facebook className="w-3.5 h-3.5" /></Link>
+            <Link href="#" className="hover:text-[#07a447] transition-colors"><Twitter className="w-3.5 h-3.5" /></Link>
+            <Link href="#" className="hover:text-[#07a447] transition-colors"><Instagram className="w-3.5 h-3.5" /></Link>
+            <Link href="#" className="hover:text-[#07a447] transition-colors"><Linkedin className="w-3.5 h-3.5" /></Link>
           </div>
         </div>
       </div>
 
-      {/* Main Nav */}
-      <nav className={`transition-all duration-300 ${scrolled ? 'bg-white shadow-xl py-1' : 'bg-white py-3'}`}>
-        <div className="w-[90%] mx-auto px-4">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
-              <Image 
-                src="http://newtoncloudserve.com/image/Logo.png" 
-                alt="Newton Cloud Logo" 
-                width={180} 
-                height={50} 
-                className="h-12 w-auto"
-                unoptimized
-              />
-            </Link>
-
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-2" ref={navRef}>
-              {menuItems.map((item) => (
-                <div key={item.id} className="relative group px-1">
-                  {item.dropdown ? (
-                    <button 
-                      onClick={() => setActiveDropdown(activeDropdown === item.id ? null : item.id)}
-                      onMouseEnter={() => setActiveDropdown(item.id)}
-                      className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg text-[15px] font-bold transition-all ${activeDropdown === item.id ? 'bg-gray-50 text-[#07a447]' : 'text-gray-800 hover:bg-gray-50'}`}
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.id ? 'rotate-180' : ''}`} />
-                    </button>
-                  ) : (
-                    <Link 
-                      href={item.href || '#'} 
-                      className="px-3 py-2 rounded-lg text-[15px] font-bold text-gray-800 hover:bg-gray-50 hover:text-[#07a447] transition-all"
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-
-                  {/* Dropdown Menu */}
-                  <AnimatePresence>
-                    {item.dropdown && activeDropdown === item.id && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        onMouseEnter={() => setActiveDropdown(item.id)}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                        className="absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden py-3 z-50"
-                      >
-                        {item.dropdown.map((sublink) => (
-                          <Link
-                            key={sublink.name}
-                            href={sublink.href}
-                            onClick={() => setActiveDropdown(null)}
-                            className="flex items-center space-x-3 px-5 py-3 hover:bg-green-50 group transition-all"
-                          >
-                            <div className="p-2 rounded-lg bg-gray-50 group-hover:bg-white transition-colors shadow-sm">
-                              <sublink.icon className="w-4 h-4 text-gray-600 group-hover:text-[#07a447]" />
-                            </div>
-                            <span className="text-[14px] font-bold text-gray-700 group-hover:text-[#07a447]">
-                              {sublink.name}
-                            </span>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+      {/* Main Nav - Glassmorphic & Floating */}
+      <div className={`w-full transition-all duration-500 ${scrolled ? 'p-2 pt-4' : 'p-0'}`}>
+        <nav className={`w-[90%] mx-auto rounded-2xl transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20' : 'bg-white border-b border-gray-100'}`}>
+          <div className="px-6">
+            <div className={`flex justify-between items-center transition-all duration-500 ${scrolled ? 'h-16' : 'h-24'}`}>
+              {/* Logo */}
+              <Link href="/" className="flex-shrink-0 group">
+                <div className="relative overflow-hidden">
+                  <Image 
+                    src="http://newtoncloudserve.com/image/Logo.png" 
+                    alt="Newton Cloud Logo" 
+                    width={180} 
+                    height={50} 
+                    className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+                    unoptimized
+                  />
                 </div>
-              ))}
-              
-              {/* Login/CTA Button */}
-              <div className="ml-4 pl-4 border-l border-gray-100">
-                <Link 
-                  href="/login" 
-                  className="bg-[#f29400] text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#d98500] transition-all shadow-md shadow-orange-100 flex items-center space-x-2 group"
-                >
-                  <LayoutGrid className="w-4 h-4 group-hover:rotate-90 transition-transform" />
-                  <span>Login</span>
-                </Link>
+              </Link>
+
+              {/* Desktop Menu */}
+              <div className="hidden lg:flex items-center space-x-1" ref={navRef}>
+                {menuItems.map((item) => (
+                  <div 
+                    key={item.id} 
+                    className="relative"
+                    onMouseEnter={() => setActiveDropdown(item.id)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    {item.dropdown ? (
+                      <button 
+                        className={`flex items-center space-x-1 px-4 py-3 rounded-xl text-[14px] font-semibold transition-all duration-300 ${activeDropdown === item.id ? 'text-[#07a447] bg-green-50/50' : 'text-gray-700 hover:text-[#07a447] hover:bg-gray-50'}`}
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-500 ${activeDropdown === item.id ? 'rotate-180 text-[#07a447]' : 'text-gray-400'}`} />
+                      </button>
+                    ) : (
+                      <Link 
+                        href={item.href || '#'} 
+                        className="px-4 py-3 rounded-xl text-[14px] font-semibold text-gray-700 hover:text-[#07a447] hover:bg-gray-50 transition-all duration-300 block"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+
+                    {/* Premium Dropdown Menu */}
+                    <AnimatePresence>
+                      {item.dropdown && activeDropdown === item.id && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 5, scale: 0.95 }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 z-50"
+                        >
+                          <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-100 overflow-hidden p-2">
+                            <div className="grid gap-1">
+                              {item.dropdown.map((sublink) => (
+                                <Link
+                                  key={sublink.name}
+                                  href={sublink.href}
+                                  onClick={() => setActiveDropdown(null)}
+                                  className="flex items-center space-x-4 p-3 rounded-xl hover:bg-green-50 group transition-all duration-200"
+                                >
+                                  <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white transition-colors shadow-sm text-gray-500 group-hover:text-[#07a447]">
+                                    <sublink.icon className="w-5 h-5" />
+                                  </div>
+                                  <div className="flex flex-col text-left">
+                                    <span className="text-[14px] font-bold text-gray-800 group-hover:text-[#07a447] whitespace-nowrap">
+                                      {sublink.name}
+                                    </span>
+                                    <span className="text-[11px] text-gray-400 font-medium group-hover:text-[#07a447]/60">Explore solutions</span>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+                
+                {/* Login Button */}
+                <div className="ml-6 pl-6 border-l border-gray-200">
+                  <Link 
+                    href="/login" 
+                    className="bg-[#07a447] text-white px-7 py-2.5 rounded-xl font-bold text-sm hover:bg-[#068f3e] transition-all duration-300 shadow-lg shadow-green-200 flex items-center space-x-2 active:scale-95"
+                  >
+                    <LayoutGrid className="w-4 h-4" />
+                    <span>Portal Login</span>
+                  </Link>
+                </div>
               </div>
-            </div>
 
             {/* Mobile Menu Toggle */}
             <div className="lg:hidden">
@@ -291,8 +302,9 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </nav>
-    </header>
-  );
+    </div>
+  </header>
+);
 };
 
 export default Navbar;

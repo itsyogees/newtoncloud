@@ -32,19 +32,39 @@ const TermsPage = () => {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-gray-900 text-white relative overflow-hidden text-center">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-600/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#0a1128] text-white relative overflow-hidden text-center">
+        {/* Background Blobs */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#07a447]/20 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#07a447]/10 rounded-full blur-[120px]"></div>
+        </div>
+
+        {/* Tech Grid Pattern */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a1128]/50 to-[#0a1128] -z-10"></div>
+
         <div className="w-[90%] mx-auto relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
-              <Shield className="w-8 h-8 text-primary-500" />
-            </div>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6">Terms <span className="text-primary-500">& Conditions</span></h1>
-            <p className="text-xl text-gray-400 max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block px-4 py-1.5 mb-6 rounded-full bg-[#07a447]/10 border border-[#07a447]/20 backdrop-blur-md"
+            >
+              <span className="text-sm font-bold text-[#07a447] tracking-wider uppercase">Legal & Compliance</span>
+            </motion.div>
+
+            <h1 className="text-4xl lg:text-6xl font-black mb-8 leading-[1.1] tracking-tight">Terms <span className="text-[#07a447] relative">
+              & Conditions
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#07a447]/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+                </svg>
+              </span></h1>
+            <p className="text-lg lg:text-xl text-gray-400 max-w-2xl font-medium">
               Last updated: April 2024. Please review our legal framework for using NewtonCloud services.
             </p>
           </motion.div>
@@ -56,7 +76,7 @@ const TermsPage = () => {
         <div className="w-[90%] mx-auto max-w-4xl">
           <div className="space-y-16">
             {sections.map((section, index) => (
-              <motion.div 
+              <motion.div
                 key={section.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

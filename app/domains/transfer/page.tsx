@@ -20,26 +20,26 @@ const DomainTransferPage = () => {
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-600/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
         <div className="w-[90%] mx-auto relative z-10 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl lg:text-5xl font-extrabold mb-6"
           >
-            Transfer Your <span className="text-primary-600">Domain</span> 
+            Transfer Your <span className="text-primary-600">Domain</span>
           </motion.h1>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             Move your domain to NewtonCloud and enjoy better support, lower prices, and simplified management.
           </p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="relative max-w-2xl mx-auto"
           >
-            <input 
-              type="text" 
-              placeholder="Enter domain to transfer..." 
+            <input
+              type="text"
+              placeholder="Enter domain to transfer..."
               className="w-full bg-white/10 border-2 border-white/20 rounded-2xl px-6 py-5 pr-32 focus:outline-none focus:border-primary-500 transition-all text-lg font-medium text-white placeholder:text-gray-500"
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
@@ -60,7 +60,7 @@ const DomainTransferPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={step.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
