@@ -7,23 +7,29 @@ import { Server, Zap, Shield, Globe, Database, Headphones } from 'lucide-react';
 const WebHostingPage = () => {
   const plans = [
     {
-      name: 'Starter Cloud',
-      price: '$2.99',
-      desc: 'Perfect for small personal websites and blogs.',
-      features: ['1 Website', '10 GB SSD Storage', 'Unmetered Bandwidth', 'Free SSL', '24/7 Support']
+      name: 'LIN_TINY',
+      price: '₹199',
+      desc: 'The perfect starting point for growing an online presence.',
+      features: ['1 Website', '10 GB Disk Space', '100 GB Bandwidth', '3 Email Accounts', 'Free Softaculous', '99.9% Uptime', 'Indian Server']
     },
     {
-      name: 'Business Pro',
-      price: '$5.99',
+      name: 'LIN_MICRO',
+      price: '₹399',
       popular: true,
       desc: 'Ideal for growing businesses and portfolios.',
-      features: ['Unlimited Websites', '50 GB SSD Storage', 'Unmetered Bandwidth', 'Free Domain', 'Free SSL', 'Daily Backups']
+      features: ['1 Website', '60 GB Disk Space', '100 GB Bandwidth', '10 Email Accounts', 'Free Softaculous', '99.9% Uptime', 'Indian Server']
     },
     {
-      name: 'Enterprise Ultra',
-      price: '$12.99',
+      name: 'LIN_BIG',
+      price: '₹499',
+      desc: 'Great for high traffic sites and multiple domains.',
+      features: ['Unlimited Websites', '160 GB Disk Space', 'Unlimited Bandwidth', '250 Email Accounts', 'Free Softaculous', '99.9% Uptime', 'Indian Server']
+    },
+    {
+      name: 'LIN_LARGE',
+      price: '₹749',
       desc: 'Maximum performance for large scale projects.',
-      features: ['Unlimited Websites', '100 GB NVMe Storage', 'Dedicated IP', 'Professional Email', 'Priority Support']
+      features: ['Unlimited Websites', 'Unlimited Disk Space', 'Unlimited Bandwidth', 'Unlimited Email Accounts', 'Free Softaculous', '99.9% Uptime', 'Indian Server']
     }
   ];
 

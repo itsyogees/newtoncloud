@@ -1,56 +1,36 @@
 'use client';
 
 import React from 'react';
-import HostingPage from '@/components/HostingPage';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { Zap, Shield, Server, Headphones, Globe, Database } from 'lucide-react';
 
 export default function DedicatedHosting() {
   const plans = [
     {
-      name: 'D-1',
-      price: '$149.99',
-      desc: 'Perfect for large businesses and applications.',
-      features: [
-        '4 Cores / 8 Threads',
-        '16 GB RAM',
-        '500 GB NVMe Storage',
-        'Unlimited Bandwidth',
-        'Free SSL Certificate',
-        'Full Root Access',
-      ],
-      popular: false,
+      name: 'NDC_BASIC',
+      price: '₹7999',
+      desc: 'Entry-level dedicated power.',
+      features: ['Intel Xeon Dual Core', '4 GB RAM', '1 TB Disk Space', '500 GB Bandwidth', '2 Dedicated IPs', 'Choice of OS']
     },
     {
-      name: 'D-2',
-      price: '$249.99',
-      desc: 'Ideal for high-traffic sites and applications.',
-      features: [
-        '8 Cores / 16 Threads',
-        '32 GB RAM',
-        '1 TB NVMe Storage',
-        'Unlimited Bandwidth',
-        'Free SSL & Domain',
-        'Full Root Access',
-        'Priority Support',
-      ],
+      name: 'NDC_STANDARD',
+      price: '₹12999',
       popular: true,
+      desc: 'Balanced performance for apps.',
+      features: ['Intel Xeon Dual Core', '12 GB DDR3 RAM', '1.5 TB Disk Space', '1 TB Bandwidth', '2 Dedicated IPs', 'RAID Setup']
     },
     {
-      name: 'D-3',
-      price: '$399.99',
-      desc: 'Maximum performance for intensive workloads.',
-      features: [
-        '16 Cores / 32 Threads',
-        '64 GB RAM',
-        '2 TB NVMe Storage',
-        'Unlimited Bandwidth',
-        'Free SSL & Domain',
-        'Full Root Access',
-        'Advanced Security',
-        'VIP Support',
-      ],
-      popular: false,
+      name: 'C_PROFESSION',
+      price: '₹15999',
+      desc: 'High-compute professional server.',
+      features: ['2x Intel Xeon Dual Core', '20 GB DDR3 RAM', '2 TB Disk Space', '1.5 TB Bandwidth', '2 Dedicated IPs', 'Hardware RAID']
     },
+    {
+      name: 'NDC_ENTERPRISE',
+      price: '₹19999',
+      desc: 'Maximum performance enterprise server.',
+      features: ['2x Intel Xeon Dual Core', '32 GB DDR3 RAM', '3 TB Disk Space', '2 TB Bandwidth', '2 Dedicated IPs', 'Hardware RAID']
+    }
   ];
 
   const features = [
@@ -63,9 +43,10 @@ export default function DedicatedHosting() {
   ];
 
   return (
-    <HostingPage 
-      title="Dedicated Servers" 
-      subtitle="Experience the ultimate in power and control with our dedicated servers. Perfect for large businesses and applications that require maximum performance."
+    <ServicePageTemplate 
+      title="Dedicated" 
+      subtitle="Servers" 
+      description="Experience the ultimate in power and control with our bare-metal dedicated servers. Perfect for large businesses that require maximum performance."
       plans={plans}
       features={features}
     />

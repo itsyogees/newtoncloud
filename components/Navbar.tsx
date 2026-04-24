@@ -60,6 +60,7 @@ const Navbar = () => {
         { name: 'Web Hosting', href: '/hosting/shared', icon: Server },
         { name: 'Wordpress Hosting', href: '/hosting/wordpress', icon: Globe },
         { name: 'Reseller Hosting', href: '/hosting/reseller', icon: Server },
+        { name: 'Dedicated Server', href: '/hosting/dedicated', icon: Server },
       ]
     },
     {

@@ -7,23 +7,35 @@ import { Users, Layout, Shield, Globe, Database, Settings } from 'lucide-react';
 const ResellerHostingPage = () => {
   const plans = [
     {
-      name: 'Reseller Lite',
-      price: '$19.99',
+      name: 'Economy',
+      price: '₹1500',
       desc: 'Start your hosting business with ease.',
-      features: ['20 cPanel Accounts', '40 GB SSD Storage', 'WHM Access', 'White Label', 'Free Migrations']
+      features: ['10 cPanel Accounts', '10 GB Disk Space', '200 GB Bandwidth', 'Unlimited Domains', 'LiteSpeed Web Server', 'Latest WHM/cPanel']
     },
     {
-      name: 'Reseller Pro',
-      price: '$34.99',
+      name: 'Deluxe',
+      price: '₹2500',
+      desc: 'Perfect for growing reseller businesses.',
+      features: ['25 cPanel Accounts', '25 GB Disk Space', '500 GB Bandwidth', 'Unlimited Domains', 'LiteSpeed Web Server', 'Latest WHM/cPanel']
+    },
+    {
+      name: 'Professional',
+      price: '₹3500',
       popular: true,
       desc: 'Best for established agencies.',
-      features: ['50 cPanel Accounts', '100 GB SSD Storage', 'WHM Access', 'Billing Software', 'Priority Support']
+      features: ['50 cPanel Accounts', '50 GB Disk Space', '1000 GB Bandwidth', 'Unlimited Domains', 'LiteSpeed Web Server', 'Latest WHM/cPanel']
     },
     {
-      name: 'Reseller Elite',
-      price: '$59.99',
+      name: 'Business',
+      price: '₹4500',
+      desc: 'High-performance required for larger clients.',
+      features: ['75 cPanel Accounts', '75 GB Disk Space', '1500 GB Bandwidth', 'Unlimited Domains', 'LiteSpeed Web Server', 'Latest WHM/cPanel']
+    },
+    {
+      name: 'Premium',
+      price: '₹5500',
       desc: 'Enterprise-grade reseller hosting.',
-      features: ['100 cPanel Accounts', '250 GB NVMe Storage', 'Dedicated IP', 'Custom Logo WHM', 'VIP Support']
+      features: ['100 cPanel Accounts', '100 GB Disk Space', '2000 GB Bandwidth', 'Unlimited Domains', 'LiteSpeed Web Server', 'Latest WHM/cPanel']
     }
   ];
 

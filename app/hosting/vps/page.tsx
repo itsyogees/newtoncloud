@@ -7,23 +7,29 @@ import { Cpu, Zap, Shield, Globe, Database, Terminal } from 'lucide-react';
 const VPSHostingPage = () => {
   const plans = [
     {
-      name: 'VPS Start',
-      price: '$9.99',
-      desc: 'Entry-level dedicated resources.',
-      features: ['2 vCPU Cores', '4 GB RAM', '80 GB NVMe SSD', '1 TB Bandwidth', 'Root Access']
+      name: 'Beginner',
+      price: '₹1450',
+      desc: 'The perfect starting point for an online presence.',
+      features: ['1 vCPU Core', '2 GB RAM', '40 GB NVMe Space', '1 TB Bandwidth', '1 Dedicated IP', 'Linux/Windows OS', 'Live Replication']
     },
     {
-      name: 'VPS Power',
-      price: '$24.99',
+      name: 'Valued',
+      price: '₹1800',
+      desc: 'Balanced performance for growing apps.',
+      features: ['2 vCPU Cores', '2 GB RAM', '80 GB NVMe Space', '2 TB Bandwidth', '1 Dedicated IP', '10GB DR Backup', '99.9% Uptime']
+    },
+    {
+      name: 'Advanced',
+      price: '₹2900',
       popular: true,
-      desc: 'Balanced performance for apps.',
-      features: ['4 vCPU Cores', '8 GB RAM', '160 GB NVMe SSD', '4 TB Bandwidth', 'Daily Backups']
+      desc: 'Great for high traffic sites and databases.',
+      features: ['2 vCPU Cores', '4 GB RAM', '100 GB NVMe Space', '3 TB Bandwidth', '2 Dedicated IPs', '25GB DR Backup', 'Indian Server']
     },
     {
-      name: 'VPS Beast',
-      price: '$49.99',
-      desc: 'High-compute enterprise VPS.',
-      features: ['8 vCPU Cores', '16 GB RAM', '320 GB NVMe SSD', 'Unlimited Bandwidth', 'Priority Support']
+      name: 'Business',
+      price: '₹5100',
+      desc: 'Maximum performance for large scale projects.',
+      features: ['4 vCPU Cores', '8 GB RAM', '150 GB NVMe Space', 'Unlimited Bandwidth', '2 Dedicated IPs', '25GB DR Backup', 'Indian Server']
     }
   ];
 

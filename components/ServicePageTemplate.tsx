@@ -86,9 +86,10 @@ const ServicePageTemplate: React.FC<ServicePageProps> = ({ title, subtitle, desc
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-white">
-        <div className="w-[90%] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="py-24 bg-white relative">
+        <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-gray-50 to-white -z-10"></div>
+        <div className="w-[90%] mx-auto max-w-[1400px]">
+          <div className={`grid grid-cols-1 md:grid-cols-2 ${plans.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-8`}>
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.name}
@@ -96,10 +97,10 @@ const ServicePageTemplate: React.FC<ServicePageProps> = ({ title, subtitle, desc
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`p-8 rounded-3xl border-2 transition-all duration-300 hover:shadow-2xl flex flex-col ${plan.popular ? 'border-primary-600 shadow-xl scale-105 relative z-10' : 'border-gray-50'}`}
+                className={`p-8 rounded-[2rem] border-2 transition-all duration-300 flex flex-col bg-white ${plan.popular ? 'border-[#07a447] shadow-[0_20px_60px_rgba(7,164,71,0.15)] lg:scale-105 relative z-10' : 'border-gray-100 shadow-sm hover:shadow-xl hover:border-gray-200'}`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#07a447] to-[#068f3e] text-white px-6 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase shadow-lg shadow-[#07a447]/30 whitespace-nowrap">
                     Most Popular
                   </div>
                 )}
@@ -112,14 +113,16 @@ const ServicePageTemplate: React.FC<ServicePageProps> = ({ title, subtitle, desc
                 <ul className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feature: string) => (
                     <li key={feature} className="flex items-center space-x-3 text-gray-700">
-                      <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
+                      <div className="w-5 h-5 rounded-full bg-[#07a447]/10 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3.5 h-3.5 text-[#07a447]" />
+                      </div>
+                      <span className="text-sm font-medium">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 group ${plan.popular ? 'bg-primary-600 text-white hover:bg-primary-700' : 'bg-gray-900 text-white hover:bg-black'}`}>
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <button className={`w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center space-x-2 group active:scale-95 shadow-sm hover:shadow-md ${plan.popular ? 'bg-[#07a447] text-white hover:bg-[#068f3e]' : 'bg-gray-50 text-gray-900 border border-gray-200 hover:border-[#07a447] hover:bg-white hover:text-[#07a447]'}`}>
+                  <span className="uppercase text-xs tracking-wider">Get Started</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </motion.div>
             ))}
@@ -142,13 +145,13 @@ const ServicePageTemplate: React.FC<ServicePageProps> = ({ title, subtitle, desc
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 group hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 group hover:shadow-xl hover:border-[#07a447]/30 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                  <feature.icon className="w-6 h-6 text-primary-600 group-hover:text-white mb-0" />
+                <div className="w-14 h-14 bg-[#07a447]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#07a447] group-hover:scale-110 transition-all duration-300">
+                  <feature.icon className="w-7 h-7 text-[#07a447] group-hover:text-white mb-0" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#07a447] transition-colors">{feature.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed font-medium">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
