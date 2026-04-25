@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Search, Globe, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Globe, CheckCircle2, ArrowRight, Play } from 'lucide-react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 
 const Hero = () => {
@@ -71,49 +72,28 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative group w-full"
           >
-            <div className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 relative z-10">
-              <div className="flex items-center space-x-3 mb-8">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <Globe className="text-white w-7 h-7" />
+            <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-8 border-white bg-gray-100">
+              <Image
+                src="/assets/vps_hosting_offer.avif"
+                alt="Cloud Hosting Services"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/10 flex items-center justify-center transition-colors">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl">
+                  <Play className="w-10 h-10 text-[#07a447] fill-[#07a447]" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">Find Your Domain</h3>
-                  <p className="text-sm text-gray-500">Search for your perfect online identity</p>
-                </div>
-              </div>
-
-              <div className="relative mb-8">
-                <input
-                  type="text"
-                  placeholder="Enter your domain name..."
-                  className="w-full bg-gray-50 border-2 border-gray-100 rounded-2xl px-6 py-5 pr-32 focus:outline-none focus:border-primary-500 transition-all text-lg font-medium"
-                  value={domain}
-                  onChange={(e) => setDomain(e.target.value)}
-                />
-                <button className="absolute right-2 top-2 bottom-2 bg-primary-600 text-white px-8 rounded-lg font-bold hover:bg-primary-700 transition-all flex items-center space-x-2">
-                  <Search className="w-5 h-5" />
-                  <span>Search</span>
-                </button>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                {tlds.map((tld) => (
-                  <div key={tld.name} className="text-center p-3 rounded-lg bg-gray-50 border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-all cursor-pointer group">
-                    <p className="font-bold text-gray-900 group-hover:text-primary-600">{tld.name}</p>
-                    <p className="text-xs text-primary-600 font-bold">{tld.price}</p>
-                  </div>
-                ))}
               </div>
             </div>
-
+ 
             {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-600/10 rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary-600/10 rounded-full blur-2xl animate-pulse delay-700"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-600/10 rounded-full blur-2xl -z-10"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary-600/10 rounded-full blur-2xl -z-10"></div>
           </motion.div>
         </div>
       </div>

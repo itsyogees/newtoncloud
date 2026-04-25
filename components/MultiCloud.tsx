@@ -20,9 +20,9 @@ const MultiCloud = () => {
       color: 'orange'
     },
     {
-      name: 'Akamai',
-      desc: 'Akamai provides advanced cloud services, enhancing website performance, cybersecurity, and content delivery for seamless, secure, and fast digital experiences globally.',
-      image: '/assets/akamai.png',
+      name: 'Google Cloud',
+      desc: 'Google Cloud offers cutting-edge infrastructure and data analytics, delivering scalable, high-performance solutions for modern enterprises with integrated AI and machine learning capabilities.',
+      image: '/assets/cloud-google.png',
       color: 'blue'
     }
   ];
@@ -43,10 +43,10 @@ const MultiCloud = () => {
               <span>Multi-Cloud Hosting Simplified</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-8">
-              CloudMinister - Your Trusted <span className="text-gray-800">Multi–Cloud Hosting Partner</span>
+              NewtonCloud - Your Trusted <span className="text-gray-800">Multi–Cloud Hosting Partner</span>
             </h2>
             <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
-              Empower your business with the best cloud hosting solutions from Microsoft Azure, Akamai, AWS, and Google Cloud—all under one roof. At CloudMinister, we provide seamless, scalable, and secure cloud hosting services tailored to your needs.
+              Empower your business with the best cloud hosting solutions from Microsoft Azure, AWS, and Google Cloud—all under one roof. At NewtonCloud, we provide seamless, scalable, and secure cloud hosting services tailored to your needs.
             </p>
           </motion.div>
 

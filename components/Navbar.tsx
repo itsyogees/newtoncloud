@@ -115,17 +115,7 @@ const Navbar = () => {
     <header className="fixed w-full z-50 transition-all duration-300">
       {/* Top Bar - More subtle and integrated */}
       <div className={`transition-all duration-300 ${scrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-auto py-2 bg-gray-900 text-white/90'}`}>
-        <div className="w-[90%] mx-auto flex justify-between items-center px-4">
-          <div className="flex items-center space-x-6 text-[13px]">
-            <div className="hidden sm:flex items-center space-x-2.5">
-              <Phone className="w-3.5 h-3.5 text-[#07a447]" />
-              <span className="font-medium">+91 98406 04073</span>
-            </div>
-            <div className="flex items-center space-x-2.5">
-              <Mail className="w-3.5 h-3.5 text-[#07a447]" />
-              <span className="font-medium truncate max-w-[200px] sm:max-w-none">support@newtoncloudserve.com</span>
-            </div>
-          </div>
+        <div className="w-[90%] mx-auto flex justify-end items-center px-4">
           <div className="flex items-center space-x-5">
             <Link href="#" className="hover:text-[#07a447] transition-colors"><Facebook className="w-3.5 h-3.5" /></Link>
             <Link href="#" className="hover:text-[#07a447] transition-colors"><Twitter className="w-3.5 h-3.5" /></Link>
@@ -137,7 +127,7 @@ const Navbar = () => {
 
       {/* Main Nav - Glassmorphic & Floating */}
       <div className={`w-full transition-all duration-500 ${scrolled ? 'p-2 pt-4' : 'p-0'}`}>
-        <nav className={`w-[90%] mx-auto rounded-2xl transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20' : 'bg-white border-b border-gray-100'}`}>
+        <nav className={`w-[100%] mx-auto transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20' : 'bg-white border-b border-gray-100'}`}>
           <div className="px-6">
             <div className={`flex justify-between items-center transition-all duration-500 ${scrolled ? 'h-16' : 'h-24'}`}>
               {/* Logo */}
@@ -146,9 +136,9 @@ const Navbar = () => {
                   <Image 
                     src="http://newtoncloudserve.com/image/Logo.png" 
                     alt="Newton Cloud Logo" 
-                    width={180} 
-                    height={50} 
-                    className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+                    width={220} 
+                    height={65} 
+                    className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
                     unoptimized
                   />
                 </div>
@@ -165,7 +155,7 @@ const Navbar = () => {
                   >
                     {item.dropdown ? (
                       <button 
-                        className={`flex items-center space-x-1 px-4 py-3 rounded-xl text-[14px] font-semibold transition-all duration-300 ${activeDropdown === item.id ? 'text-[#07a447] bg-green-50/50' : 'text-gray-700 hover:text-[#07a447] hover:bg-gray-50'}`}
+                        className={`flex items-center space-x-1 px-3 py-3 rounded-xl text-[13px] font-semibold transition-all duration-300 ${activeDropdown === item.id ? 'text-[#07a447] bg-green-50/50' : 'text-gray-700 hover:text-[#07a447] hover:bg-gray-50'}`}
                       >
                         <span>{item.name}</span>
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-500 ${activeDropdown === item.id ? 'rotate-180 text-[#07a447]' : 'text-gray-400'}`} />
@@ -173,7 +163,7 @@ const Navbar = () => {
                     ) : (
                       <Link 
                         href={item.href || '#'} 
-                        className="px-4 py-3 rounded-xl text-[14px] font-semibold text-gray-700 hover:text-[#07a447] hover:bg-gray-50 transition-all duration-300 block"
+                        className="px-3 py-3 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#07a447] hover:bg-gray-50 transition-all duration-300 block"
                       >
                         {item.name}
                       </Link>
@@ -216,14 +206,21 @@ const Navbar = () => {
                   </div>
                 ))}
                 
-                {/* Login Button */}
-                <div className="ml-6 pl-6 border-l border-gray-200">
+                {/* Help Line & Login Button */}
+                <div className="ml-4 pl-4 border-l border-gray-200 flex items-center space-x-4">
+                  <div className="hidden lg:flex flex-col items-end">
+                    <div className="flex items-center space-x-1.5 text-[#07a447]">
+                      <Phone className="w-3.5 h-3.5 fill-current" />
+                      <span className="text-[13px] font-black tracking-tight whitespace-nowrap">+91 8939993510 / +91 44 4550 2323</span>
+                    </div>
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-none mt-1">(24X7 helpline)</span>
+                  </div>
                   <Link 
                     href="/login" 
                     className="bg-[#07a447] text-white px-7 py-2.5 rounded-xl font-bold text-sm hover:bg-[#068f3e] transition-all duration-300 shadow-lg shadow-green-200 flex items-center space-x-2 active:scale-95"
                   >
                     <LayoutGrid className="w-4 h-4" />
-                    <span>Portal Login</span>
+                    <span>Login</span>
                   </Link>
                 </div>
               </div>
@@ -298,6 +295,19 @@ const Navbar = () => {
                     )}
                   </div>
                 ))}
+                
+                {/* Mobile Contact Info */}
+                <div className="mt-6 p-6 bg-green-50 rounded-2xl border border-green-100 flex flex-col items-center text-center">
+                  <div className="flex items-center space-x-2 text-[#07a447] mb-1">
+                    <Phone className="w-4 h-4 fill-current" />
+                    <span className="text-[16px] font-black">+91 8939993510</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-[#07a447] mb-2">
+                    <Phone className="w-4 h-4 fill-current" />
+                    <span className="text-[16px] font-black">+91 44 4550 2323</span>
+                  </div>
+                  <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">(24X7 helpline)</span>
+                </div>
               </div>
             </motion.div>
           )}

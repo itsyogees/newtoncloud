@@ -4,8 +4,8 @@ import PricingPlans from '@/components/PricingPlans';
 import Features from '@/components/Features';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
-import MultiCloud from '@/components/MultiCloud';
-import CloudSecurity from '@/components/CloudSecurity';
+
+
 import PowerfulServices from '@/components/PowerfulServices';
 import ServerManagement from '@/components/ServerManagement';
 import { Metadata } from 'next';
@@ -20,8 +20,9 @@ export default function Home() {
     <main className="min-h-screen bg-white selection:bg-primary-100 selection:text-primary-600">
       <Hero />
       <PricingPlans />
-      <MultiCloud />
-      <CloudSecurity />
+
+
+
       <PowerfulServices />
       <ServerManagement />
       <Features />

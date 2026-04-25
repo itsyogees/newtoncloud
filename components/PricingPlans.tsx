@@ -97,7 +97,7 @@ const PricingPlans = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -142,6 +142,30 @@ const PricingPlans = () => {
               </button>
             </motion.div>
           ))}
+        </div>
+
+        {/* Integrated Cloud Providers Section */}
+        <div className="mt-32 pt-20 border-t border-gray-100">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-black text-gray-900 mb-4">Multi-Cloud Provider Support</h3>
+            <p className="text-gray-500 max-w-2xl mx-auto font-medium">We partner with the world's leading cloud infrastructure providers to deliver maximum performance.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
+            {[
+              { name: 'Microsoft Azure', image: '/assets/azure.png', desc: 'Enterprise-grade cloud solutions for scaled applications.' },
+              { name: 'AWS Support', image: '/assets/AwsSmall.png', desc: 'Global infrastructure for mission-critical workloads.' },
+              { name: 'Google Cloud', image: '/assets/cloud-google.png', desc: 'Cutting-edge data analytics and AI-powered hosting.' }
+            ].map((provider, i) => (
+              <div key={i} className="p-10 text-center bg-white hover:bg-gray-50 transition-all border-r border-gray-100 last:border-r-0">
+                <div className="h-16 flex items-center justify-center mb-6">
+                  <img src={provider.image} alt={provider.name} className="h-10 object-contain" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2">{provider.name}</h4>
+                <p className="text-sm text-gray-500 mb-6">{provider.desc}</p>
+                <button className="text-primary-600 font-bold text-sm hover:underline">Read More →</button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
