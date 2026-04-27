@@ -30,50 +30,9 @@ const MultiCloud = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="w-[90%] mx-auto">
-        {/* Top Section: Text & Video */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center space-x-2 bg-green-50 text-[#07a447] px-4 py-1.5 rounded-lg text-sm font-bold mb-6 border border-green-100">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#07a447]"></span>
-              <span>Multi-Cloud Hosting Simplified</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-8">
-              NewtonCloud - Your Trusted <span className="text-gray-800">Multi–Cloud Hosting Partner</span>
-            </h2>
-            <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
-              Empower your business with the best cloud hosting solutions from Microsoft Azure, AWS, and Google Cloud—all under one roof. At NewtonCloud, we provide seamless, scalable, and secure cloud hosting services tailored to your needs.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative group"
-          >
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-gray-100">
-              <Image
-                src="/assets/vps_hosting_offer.avif"
-                alt="Multi-Cloud Hosting Services"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <Play className="w-8 h-8 text-[#07a447] fill-[#07a447]" />
-                </div>
-              </div>
-            </div>
-            {/* Decorative elements behind video */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-green-50 rounded-full -z-10"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gray-50 rounded-full -z-10"></div>
-          </motion.div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Multi-Cloud Provider Support</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">We partner with world-class cloud infrastructure providers to deliver maximum reliability and performance.</p>
         </div>
 
         {/* Bottom Section: Provider Cards */}
